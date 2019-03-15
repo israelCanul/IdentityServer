@@ -1,0 +1,23 @@
+2019-03-14 23:56:51.510 -05:00 [INF] You are using the in-memory version of the persisted grant store. This will store consent decisions, authorization codes, refresh and reference tokens in memory only. If you are using any of those features in production, you want to switch to a different store implementation.
+2019-03-14 23:56:51.542 -05:00 [INF] Using the default authentication scheme Identity.Application for IdentityServer
+2019-03-14 23:56:51.544 -05:00 [DBG] Using Identity.Application as default ASP.NET Core scheme for authentication
+2019-03-14 23:56:51.544 -05:00 [DBG] Using Identity.External as default ASP.NET Core scheme for sign-in
+2019-03-14 23:56:51.544 -05:00 [DBG] Using Identity.External as default ASP.NET Core scheme for sign-out
+2019-03-14 23:56:51.544 -05:00 [DBG] Using Identity.Application as default ASP.NET Core scheme for challenge
+2019-03-14 23:56:51.544 -05:00 [DBG] Using Identity.Application as default ASP.NET Core scheme for forbid
+2019-03-14 23:56:51.867 -05:00 [DBG] Login Url: /Account/Login
+2019-03-14 23:56:51.868 -05:00 [DBG] Login Return Url Parameter: ReturnUrl
+2019-03-14 23:56:51.868 -05:00 [DBG] Logout Url: /Account/Logout
+2019-03-14 23:56:51.868 -05:00 [DBG] ConsentUrl Url: /consent
+2019-03-14 23:56:51.868 -05:00 [DBG] Consent Return Url Parameter: returnUrl
+2019-03-14 23:56:51.868 -05:00 [DBG] Error Url: /home/error
+2019-03-14 23:56:51.868 -05:00 [DBG] Error Id Parameter: errorId
+2019-03-14 23:57:23.357 -05:00 [INF] AuthenticationScheme: Identity.Application was challenged.
+2019-03-14 23:57:28.464 -05:00 [INF] AuthenticationScheme: Google was challenged.
+2019-03-14 23:57:58.569 -05:00 [DBG] CORS request made for path: /Account/Login from origin: null but was ignored because path was not for an allowed IdentityServer CORS endpoint
+2019-03-14 23:57:59.003 -05:00 [DBG] Augmenting SignInContext
+2019-03-14 23:57:59.005 -05:00 [DBG] Adding idp claim with value: local
+2019-03-14 23:57:59.005 -05:00 [DBG] Adding amr claim with value: pwd
+2019-03-14 23:57:59.005 -05:00 [DBG] Adding auth_time claim with value: 1552625879
+2019-03-14 23:57:59.014 -05:00 [INF] AuthenticationScheme: Identity.Application signed in.
+2019-03-14 23:57:59.052 -05:00 [INF] {"Username":"bob","Provider":null,"ProviderUserId":null,"SubjectId":"84239b47-5485-4fc9-bd0f-8ad60351baf1","DisplayName":"bob","Endpoint":"UI","Category":"Authentication","Name":"User Login Success","EventType":"Success","Id":1000,"Message":null,"ActivityId":"0HLL90AHNFCKL:00000003","TimeStamp":"2019-03-15T04:57:59.0000000Z","ProcessId":1916,"LocalIpAddress":"127.0.0.1:21920","RemoteIpAddress":"::1","$type":"UserLoginSuccessEvent"}
