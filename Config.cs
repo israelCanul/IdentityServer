@@ -2,6 +2,7 @@
 // Licensed under the Apache License, Version 2.0. See LICENSE in the project root for license information.
 
 
+using IdentityServer4;
 using IdentityServer4.Models;
 using System.Collections.Generic;
 
@@ -22,7 +23,7 @@ namespace IdentityServerAspIdentity
         {
             return new ApiResource[]
             {
-                new ApiResource("api1", "My API #1")
+                new ApiResource("narilearsi", "My primera api narilearsi")
             };
         }
 
@@ -37,9 +38,9 @@ namespace IdentityServerAspIdentity
                     ClientName = "Client Credentials Client",
 
                     AllowedGrantTypes = GrantTypes.ClientCredentials,
-                    ClientSecrets = { new Secret("511536EF-F270-4058-80CA-1C89C192F69A".Sha256()) },
+                    ClientSecrets = { new Secret("secret".Sha256()) },
 
-                    AllowedScopes = { "api1" }
+                    AllowedScopes = { "narilearsi" }
                 },
 
                 // MVC client using hybrid flow
@@ -49,14 +50,18 @@ namespace IdentityServerAspIdentity
                     ClientName = "MVC Client",
 
                     AllowedGrantTypes = GrantTypes.HybridAndClientCredentials,
-                    ClientSecrets = { new Secret("49C1A7E1-0C79-4A89-A3D6-A37998FB86B0".Sha256()) },
+                    ClientSecrets = { new Secret("secret".Sha256()) },
 
-                    RedirectUris = { "http://localhost:5001/signin-oidc" },
-                    FrontChannelLogoutUri = "http://localhost:5001/signout-oidc",
-                    PostLogoutRedirectUris = { "http://localhost:5001/signout-callback-oidc" },
+                    RedirectUris = { "http://localhost:5003/signin-oidc" },
+                    FrontChannelLogoutUri = "http://localhost:5003/signout-oidc",
+                    PostLogoutRedirectUris = { "http://localhost:5003/signout-callback-oidc" },
 
                     AllowOfflineAccess = true,
-                    AllowedScopes = { "openid", "profile", "api1" }
+                    AllowedScopes = {
+                        IdentityServerConstants.StandardScopes.OpenId,
+                        IdentityServerConstants.StandardScopes.Profile,
+                        "narilearsi"
+                    }
                 },
 
                 // SPA client using implicit flow
@@ -71,16 +76,16 @@ namespace IdentityServerAspIdentity
 
                     RedirectUris =
                     {
-                        "http://localhost:5002/index.html",
-                        "http://localhost:5002/callback.html",
-                        "http://localhost:5002/silent.html",
-                        "http://localhost:5002/popup.html",
+                        "http://localhost:5003/index.html",
+                        "http://localhost:5003/callback.html",
+                        "http://localhost:5003/silent.html",
+                        "http://localhost:5003/popup.html",
                     },
 
                     PostLogoutRedirectUris = { "http://localhost:5002/index.html" },
                     AllowedCorsOrigins = { "http://localhost:5002" },
 
-                    AllowedScopes = { "openid", "profile", "api1" }
+                    AllowedScopes = { "openid", "profile", "narilearsi" }
                 }
             };
         }
