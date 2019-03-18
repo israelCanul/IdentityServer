@@ -67,23 +67,23 @@ namespace IdentityServerAspIdentity
                 // SPA client using implicit flow
                 new Client
                 {
-                    ClientId = "spa",
-                    ClientName = "SPA Client",
-                    ClientUri = "http://identityserver.io",
+                    ClientId = "clientNarileasi",
+                    //ClientName = "SPA Client",
+                    //ClientUri = "http://localhost:8014",
 
                     AllowedGrantTypes = GrantTypes.Implicit,
                     AllowAccessTokensViaBrowser = true,
-
+                    ClientSecrets = { new Secret("secret".Sha256()) },
                     RedirectUris =
                     {
-                        "http://localhost:5003/index.html",
-                        "http://localhost:5003/callback.html",
-                        "http://localhost:5003/silent.html",
-                        "http://localhost:5003/popup.html",
+                        "http://localhost:8014/static/index.html",
+                        "http://localhost:8014/static/callback.html",
+                        "http://localhost:8014/static/silent-renew.html",
+                        "http://localhost:8014/static/popup.html",
                     },
 
-                    PostLogoutRedirectUris = { "http://localhost:5002/index.html" },
-                    AllowedCorsOrigins = { "http://localhost:5002" },
+                    PostLogoutRedirectUris = { "http://localhost:8014/index.html" },
+                    AllowedCorsOrigins = { "http://localhost:8014" },
 
                     AllowedScopes = { "openid", "profile", "narilearsi" }
                 }
